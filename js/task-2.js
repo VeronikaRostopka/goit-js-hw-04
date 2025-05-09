@@ -7,9 +7,10 @@ function calcAverageCalories(days) {
   }
   
   // Підраховуємо суму всіх калорій
-  const totalCalories = days.reduce((sum, day) => {
-    return sum + day.calories;
-  }, 0);
+  let totalCalories = 0;
+  for (let i = 0; i < days.length; i++) {
+    totalCalories += days[i].calories;
+  }
   
   // Обчислюємо середнє значення
   return Math.floor(totalCalories / days.length);
